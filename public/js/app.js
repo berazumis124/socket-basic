@@ -4,8 +4,16 @@ var room = getQueryVariable('room');
 
 console.log(name + ' wants to join ' + room);
 
+// UPDATE H1 room tag
+
+jQuery('.room-title').append(room);
+
 socket.on('connect', function () {
     console.log('Connected to socket.IO!');
+    socket.emit('joinRoom', {
+        name: name,
+        room: room
+    });
 });
 
 
