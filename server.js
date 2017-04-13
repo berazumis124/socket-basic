@@ -16,8 +16,9 @@ io.on('connection', function (socket){
     });
     
     socket.emit('message',{
-        text: 'Welcome to a socket app',
-        timeStamp: moment().valueOf()
+        name: 'Chatroom',
+        text: 'Welcome to a socket app'
+        //timeStamp: moment().valueOf()
     });
 });
 
